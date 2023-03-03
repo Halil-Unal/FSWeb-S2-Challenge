@@ -74,19 +74,20 @@ function cumleKur(birinci, ikinci="", ucuncu="", dorduncu="", besinci=""){
 }
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
-
+console.log(cumleKur("Hello world!"));
 
 
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 2 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
-
+console.log(cumleKur("Hello" ,  " world! "));
 
 
 
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
 var bircumle;
+bircumle = cumleKur("Ben"," iyi"," bir"," yazılımcı"," olacağım!");
+console.log(bircumle);
 
-/* kodlar buraya */
 
 
 
@@ -104,11 +105,14 @@ var bircumle;
 	*/
 	
 
-function cumlelereDonustur(/* kodlar buraya */ ){
-	/* kodlar buraya */
+function cumlelereDonustur(cumle, ayrac ){
+    let son = [];
+	for (let i=0;i<cumle.length;i++){
+	son.push(cumle[i].join(ayrac));
+	}
+	return son;
 }
-
-
+console.log(cumlelereDonustur(cumleler, " "));
 
 /* GÖREV 2:
 		paragrafOlustur fonksiyonuna aşağıdakileri uygulayın.
@@ -120,10 +124,17 @@ function cumlelereDonustur(/* kodlar buraya */ ){
 			6. Oluşturulan paragraf döndürülecek
 	*/
 	
-function paragrafOlustur(/* kodlar buraya */ ){
-	/* kodlar buraya */ 
-}
+function paragrafOlustur(cumle1,callback,callback1 ){
+    let array = callback1(cumle1, " ");
+	let son1=[];
+	for (let i=0;i<cumle1.length;i++){
+son1.push(array[i]);
+	}
+	let sonarray= callback( son1[1] ,son1[3],son1[5],son1[7],son1[9]);
+	return sonarray;
 
+}
+console.log(paragrafOlustur(cumleler,cumleKur,cumlelereDonustur));
 
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
@@ -132,6 +143,9 @@ function paragrafOlustur(/* kodlar buraya */ ){
 //3a çözümü
 /* kodlar buraya */
 
+meyveler.pop()
+meyveler.shift();
+console.log(meyveler);
 
 
 
@@ -142,7 +156,9 @@ function paragrafOlustur(/* kodlar buraya */ ){
 //3b çözümü
 /* kodlar buraya */
 
-
+sebzeler.unshift("🐇");
+sebzeler.push("🦔");
+console.log(sebzeler);
 
 
 
@@ -156,7 +172,8 @@ function paragrafOlustur(/* kodlar buraya */ ){
 
 var manav;
 
-
+manav = meyveler.concat(sebzeler);
+console.log(manav);
 
 
 
