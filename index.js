@@ -186,12 +186,25 @@ console.log(manav);
 				yani hem :d hem de :D sembolleri 😁'a dönüşmelidir. bunun için (.toUpperCase ve .toLowerCase metotlarından istediğinizi kullanabilirsiniz.)
 			4. elde edilen string döndürülecek
  */
+			var emojiler = { 
+				":)": "🙂",
+				":(": "😔",
+				":d": "😁",
+				":p": "😛",
+				":o": "😱",
+				"<3": "❤️",
+				}
+				
 
-function emojileriDonustur(/* kodlar buraya */){
-/* kodlar buraya */
+function emojileriDonustur(mesaj1,emoji){
+
+let mesaj = mesaj1.replaceAll("<3","❤️").replaceAll(":)","🙂").replaceAll(":(", "😔").replaceAll(/:d/gi,"😁").replaceAll(/:p/gi,"😛").replaceAll(/:o/gi,"😱") ;
+
+return mesaj;
+
 
 }
-
+console.log(emojileriDonustur("Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık 😱 biraz da üzüldük :( ama yine de seviliyorsun <3",emojiler));
 
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
