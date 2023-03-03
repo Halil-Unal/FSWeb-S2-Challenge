@@ -198,11 +198,14 @@ console.log(manav);
 
 function emojileriDonustur(mesaj1,emoji){
 
-let mesaj = mesaj1.replaceAll("<3","❤️").replaceAll(":)","🙂").replaceAll(":(", "😔").replaceAll(/:d/gi,"😁").replaceAll(/:p/gi,"😛").replaceAll(/:o/gi,"😱") ;
+//let mesaj = mesaj1.replaceAll("<3","❤️").replaceAll(":)","🙂").replaceAll(":(", "😔").replaceAll(/:d/gi,"😁").replaceAll(/:p/gi,"😛").replaceAll(/:o/gi,"😱") ;
 
-return mesaj;
-
-
+//return mesaj;
+for (let key in emoji){
+	mesaj1=mesaj1.replaceAll(key.toUpperCase(),emoji[key]);
+	mesaj1=mesaj1.replaceAll(key,emoji[key]);
+}
+return mesaj1;
 }
 console.log(emojileriDonustur("Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık 😱 biraz da üzüldük :( ama yine de seviliyorsun <3",emojiler));
 
